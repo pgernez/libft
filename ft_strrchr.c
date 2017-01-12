@@ -1,33 +1,44 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pgernez <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/01/08 18:16:50 by pgernez           #+#    #+#             */
-/*   Updated: 2017/01/12 19:26:24 by pgernez          ###   ########.fr       */
+/*   Created: 2017/01/12 19:10:03 by pgernez           #+#    #+#             */
+/*   Updated: 2017/01/12 20:58:50 by pgernez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
-char	*ft_strchr(const char *s, int c)
+size_t	ft_strlen(const char *s)
 {
+	size_t	len;
+
+	len = 0;
+	while (s[len] != 0)
+		len++;
+	return (len);
+}
+
+char	*ft_strrchr(const char *s, int c)
+{
+	char	*s_tmp;
 	char	c_tmp;
 	size_t	i;
-	char	*s_tmp;
+	size_t	len;
 
-	i = 0;
 	c_tmp = (char)c;
 	s_tmp = (char*)s;
+	len = ft_strlen(s);
+	i = len - 1;
 	while (s[i])
 	{
 		if (s_tmp[i] == c_tmp)
 			return ((char*)&s[i]);
 		else
-			i++;
+			i--;
 	}
 	if (c_tmp == '\0')
 		return ((char*)&s[i]);

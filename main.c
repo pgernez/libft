@@ -6,7 +6,7 @@
 /*   By: pgernez <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/10 20:53:54 by pgernez           #+#    #+#             */
-/*   Updated: 2017/01/11 22:19:53 by pgernez          ###   ########.fr       */
+/*   Updated: 2017/01/12 20:57:15 by pgernez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,15 +34,32 @@ char	*ft_strchr(const char *s, int c);
 //	return (0);
 //}
 //
+//int	main(int ac, char **av)
+//{
+//	char	*str;
+//	char	*str2;
+//	
+//	if (ac == 3)
+//	{
+//		str = (char*)strchr(av[1], '\0');
+//		str2 = (char*)ft_strchr(av[2], '\0');
+//		printf("ptr est %p\n", str);
+//		printf("ptr2 est %p\n", str2);
+//		printf("str est %s\n", str);
+//		printf("str2 est %s\n", str2);
+//	}
+//	return (0);
+//}
+
 int	main(int ac, char **av)
 {
 	char	*str;
 	char	*str2;
-	
+
 	if (ac == 3)
 	{
-		str = (char*)strchr(av[1], 'j');
-		str2 = (char*)ft_strchr(av[2], 'j');
+		str = (char*)strrchr(av[1], '\0');
+		str2 = (char*)ft_strrchr(av[2], '\0');
 		printf("ptr est %p\n", str);
 		printf("ptr2 est %p\n", str2);
 		printf("str est %s\n", str);
