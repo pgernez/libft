@@ -6,16 +6,13 @@
 /*   By: pgernez <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/10 20:53:54 by pgernez           #+#    #+#             */
-/*   Updated: 2017/01/14 17:44:09 by pgernez          ###   ########.fr       */
+/*   Updated: 2017/01/14 23:25:35 by pgernez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <string.h>
 #include <stdio.h>
 #include "libft.h"
-
-void	*ft_memchr(const void *s, int c, size_t n);
-char	*ft_strchr(const char *s, int c);
 
 //int	main(int ac, char **av)
 //{
@@ -68,7 +65,7 @@ char	*ft_strchr(const char *s, int c);
 //	return (0);
 //}
 
-int	main(int ac, char **av)
+/*int	main(int ac, char **av)
 {
 	char	*str;
 	char	*str2;
@@ -82,3 +79,19 @@ int	main(int ac, char **av)
 	}
 	return (0);
 }
+*/
+int	main(int ac, char **av)
+{
+	char	*str;
+	char	*str2;
+
+	if (ac == 3)
+	{
+		str = (char*)strnstr(av[1], "ricot", 6);
+		str2 = (char*)ft_strnstr(av[2], "ricot", 6);
+		printf("la string est %s\n", str);
+		printf("la string est %s\n", str2);
+	}
+	return (0);
+}
+
