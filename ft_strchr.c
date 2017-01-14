@@ -6,17 +6,16 @@
 /*   By: pgernez <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/08 18:16:50 by pgernez           #+#    #+#             */
-/*   Updated: 2017/01/12 19:26:24 by pgernez          ###   ########.fr       */
+/*   Updated: 2017/01/14 16:15:28 by pgernez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
 char	*ft_strchr(const char *s, int c)
 {
+	size_t i;
 	char	c_tmp;
-	size_t	i;
 	char	*s_tmp;
 
 	i = 0;

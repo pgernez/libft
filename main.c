@@ -6,7 +6,7 @@
 /*   By: pgernez <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/10 20:53:54 by pgernez           #+#    #+#             */
-/*   Updated: 2017/01/12 20:57:15 by pgernez          ###   ########.fr       */
+/*   Updated: 2017/01/14 17:44:09 by pgernez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,23 @@ char	*ft_strchr(const char *s, int c);
 //	return (0);
 //}
 
+//int	main(int ac, char **av)
+//{
+//	char	*str;
+//	char	*str2;
+
+//	if (ac == 3)
+//	{
+//		str = (char*)strrchr(av[1], '\0');
+//		str2 = (char*)ft_strrchr(av[2], '\0');
+//		printf("ptr est %p\n", str);
+//		printf("ptr2 est %p\n", str2);
+//		printf("str est %s\n", str);
+//		printf("str2 est %s\n", str2);
+//	}
+//	return (0);
+//}
+
 int	main(int ac, char **av)
 {
 	char	*str;
@@ -58,12 +75,10 @@ int	main(int ac, char **av)
 
 	if (ac == 3)
 	{
-		str = (char*)strrchr(av[1], '\0');
-		str2 = (char*)ft_strrchr(av[2], '\0');
-		printf("ptr est %p\n", str);
-		printf("ptr2 est %p\n", str2);
-		printf("str est %s\n", str);
-		printf("str2 est %s\n", str2);
+		str = (char*)strstr(av[1], "co");
+		str2 = (char*)ft_strstr(av[2], "co");
+		printf("la nouvelle string est %s\n", str);
+		printf("la nouvelle string est %s\n", str2);
 	}
 	return (0);
 }
