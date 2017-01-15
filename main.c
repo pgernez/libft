@@ -35,7 +35,7 @@
 //{
 //	char	*str;
 //	char	*str2;
-//	
+//
 //	if (ac == 3)
 //	{
 //		str = (char*)strchr(av[1], '\0');
@@ -80,7 +80,7 @@
 	return (0);
 }
 */
-int	main(int ac, char **av)
+/*int	main(int ac, char **av)
 {
 	char	*str;
 	char	*str2;
@@ -93,5 +93,45 @@ int	main(int ac, char **av)
 		printf("la string est %s\n", str2);
 	}
 	return (0);
+}*/
+
+/*int		main(int i, char **argv)
+{
+	void	*zone;
+	size_t	size;
+
+	i = 12;
+	size = 12;
+	zone = ft_memalloc(size);
+	printf("size : %zu\nzone : %p\n", size, zone);
+	return (0);
+}*/
+
+/*void	ft_putbis(char *s)
+{
+	size_t	i;
+
+	i = 0;
+	while (s[i])
+	{
+		ft_putchar(s[i]);
+		i++;
+	}
+}*/
+
+/*void	ft_putter(char *s)
+{
+	ft_putstr((const char*)s);
 }
 
+int	main(int ac, char **av)
+{
+	void	(*f)(char*);
+
+	f = &ft_putter;
+	if (ac == 2)
+	{
+		ft_striter(av[1], f);
+	}
+	return (0);
+}*/

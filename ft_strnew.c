@@ -15,12 +15,18 @@
 char	*ft_strnew(size_t size)
 {
 	char	*newstr;
+	size_t	i;
 
+	i = 0;
 	newstr = (char*)malloc(sizeof(size_t) * (size + 1));
 	{
 		if (newstr == 0)
 			return (NULL);
 	}
-	//Chaque caractere de la chaine est initialise a \0
+	while (newstr[i])
+	{
+		i = 0;
+		i++;
+	}
 	return (newstr);
 }
