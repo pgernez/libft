@@ -6,7 +6,7 @@
 /*   By: pgernez <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/10 20:53:54 by pgernez           #+#    #+#             */
-/*   Updated: 2017/01/15 22:44:01 by pgernez          ###   ########.fr       */
+/*   Updated: 2017/01/15 23:34:32 by pgernez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -136,7 +136,7 @@ int	main(int ac, char **av)
 	return (0);
 }*/
 
-int	main(int ac, char **av)
+/*int	main(int ac, char **av)
 {
 	char	*str;
 
@@ -146,6 +146,18 @@ int	main(int ac, char **av)
 		printf("s1 est %s\n", av[1]);
 		printf("s2 est %s\n", av[2]);
 		printf("la nouvelle string est %s\n", str);
+	}
+	return (0);
+}*/
+
+int	main(int ac, char **av)
+{
+	char	*str;
+
+	if (ac == 2)
+	{
+		str = ft_strtrim(av[1]);
+		printf("la nouvelle chaine est : %s\n", str);
 	}
 	return (0);
 }
