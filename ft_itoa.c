@@ -1,27 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strsub.c                                        :+:      :+:    :+:   */
+/*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pgernez <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/01/15 21:23:36 by pgernez           #+#    #+#             */
-/*   Updated: 2017/01/21 17:05:07 by pgernez          ###   ########.fr       */
+/*   Created: 2017/01/21 17:05:57 by pgernez           #+#    #+#             */
+/*   Updated: 2017/01/21 17:06:31 by pgernez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strsub(char const *s, unsigned int start, size_t len)
+char	*ft_itoa(int n)
 {
 	char	*fresh;
-	size_t	i;
+	char	d;
 
-	i = 0;
-	if (!(fresh = (char*)malloc(sizeof(char) * (len - start))))
-		return (NULL);
-	while (i <= (len - start))
-		fresh[i++] = s[start++];
-	fresh[i] = 0;
+	d = 0;
+	if (n < 0)
+	{
+		n = - n;
+		ft_putchar('-');
+	}
+	while (n != '0')
+	{
+		n = n / 10;
+		d++;
+	}
+	if (!(fresh = (char*)malloc(sizeof(char) * (d + 2))))
+		return (0);
+	while (n <= (d + 1))
+		fresh[d++] = n;
+	fresh[d] = 0;
 	return (fresh);
 }
