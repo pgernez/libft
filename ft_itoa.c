@@ -12,26 +12,44 @@
 
 #include "libft.h"
 
+static char	ft_putc(char c)
+{
+	ft_putchar((char)c);
+	ft_putchar('\n');
+	return (0);
+}
+
 char	*ft_itoa(int n)
 {
 	char	*fresh;
-	char	d;
+	int		n_copy;
+	int		c;
+	size_t	d;
 
 	d = 0;
-	if (n < 0)
+	n_copy = n;
+	// if (n_copy < 0)
+	// {
+	// 	n_copy = - n_copy;
+	// 	ft_putchar('-');
+	// }
+	while (n_copy != 0)
 	{
-		n = - n;
-		ft_putchar('-');
-	}
-	while (n != '0')
-	{
-		n = n / 10;
+		n_copy = n_copy / 10;
 		d++;
 	}
 	if (!(fresh = (char*)malloc(sizeof(char) * (d + 2))))
 		return (0);
-	while (n <= (d + 1))
-		fresh[d++] = n;
+	printf("n vaut %d\n", n);
+	while (n != 0)
+	{
+		c = n % 10;
+		n = n / 10;
+		printf("c vaut : %d\n", c);
+		d = ft_putc(c + 48);
+		fresh[d++] = ;
+		printf("fresh vaut : %s\n", fresh);
+	}
 	fresh[d] = 0;
 	return (fresh);
 }

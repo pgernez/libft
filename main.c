@@ -6,7 +6,7 @@
 /*   By: pgernez <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/10 20:53:54 by pgernez           #+#    #+#             */
-/*   Updated: 2017/01/15 23:34:32 by pgernez          ###   ########.fr       */
+/*   Updated: 2017/01/26 19:28:55 by pgernez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -150,7 +150,7 @@ int	main(int ac, char **av)
 	return (0);
 }*/
 
-int	main(int ac, char **av)
+/*int	main(int ac, char **av)
 {
 	char	*str;
 
@@ -160,4 +160,18 @@ int	main(int ac, char **av)
 		printf("la nouvelle chaine est : %s\n", str);
 	}
 	return (0);
+}*/
+
+int	main(int ac, char **av)
+{
+	char	*str;
+
+	if (ac)
+		;
+	{
+		str = ft_itoa(123);
+		printf("la chaine de caracteres donne : %s\n", str);
+	}
+	return (0);
 }
+
