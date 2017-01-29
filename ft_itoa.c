@@ -6,50 +6,44 @@
 /*   By: pgernez <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/21 17:05:57 by pgernez           #+#    #+#             */
-/*   Updated: 2017/01/21 17:06:31 by pgernez          ###   ########.fr       */
+/*   Updated: 2017/01/29 23:32:40 by pgernez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static char	ft_putc(char c)
-{
-	ft_putchar((char)c);
-	ft_putchar('\n');
-	return (0);
-}
-
 char	*ft_itoa(int n)
 {
-	char	*fresh;
-	int		n_copy;
-	int		c;
-	size_t	d;
+	char			*fresh;
+	unsigned int	n_copy;
+	int				c;
+	int				neg;
+	size_t			d;
 
-	d = 0;
-	n_copy = n;
-	// if (n_copy < 0)
-	// {
-	// 	n_copy = - n_copy;
-	// 	ft_putchar('-');
-	// }
+	neg = 0;
+	d = 1;
+	if (n < 0)
+		neg = -1;
+	if (neg == -1)
+		d = 2;
+	n_copy = (neg == -1) ? -(n / 10) : n / 10; // je regarde que les chiffres avant le chiffre des unites (qui existe tout le temps)
 	while (n_copy != 0)
 	{
 		n_copy = n_copy / 10;
 		d++;
 	}
-	if (!(fresh = (char*)malloc(sizeof(char) * (d + 2))))
+	if (!(fresh = (char*)malloc(sizeof(char) * (d + 1))))
 		return (0);
-	printf("n vaut %d\n", n);
-	while (n != 0)
-	{
-		c = n % 10;
-		n = n / 10;
-		printf("c vaut : %d\n", c);
-		d = ft_putc(c + 48);
-		fresh[d++] = ;
-		printf("fresh vaut : %s\n", fresh);
-	}
+	n_copy = (neg == -1) ? -n : n;
 	fresh[d] = 0;
+	while (d + neg != 0)
+	{
+		d = d - 1;
+		c = n_copy % 10;
+		n_copy = n_copy / 10;
+		fresh[d] = c + 48;
+	}
+	if (neg == -1)
+		fresh[0] = '-';
 	return (fresh);
 }

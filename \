@@ -6,7 +6,7 @@
 /*   By: pgernez <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/10 20:53:54 by pgernez           #+#    #+#             */
-/*   Updated: 2017/01/29 23:29:21 by pgernez          ###   ########.fr       */
+/*   Updated: 2017/01/29 23:28:56 by pgernez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -169,7 +169,7 @@ int	main(int ac, char **av)
 	if (ac)
 		;
 	{
-		str = ft_itoa(0);
+		str = ft_itoa(2147483647);
 		printf("la chaine de caracteres donne : %s\n", str);
 	}
 	return (0);
