@@ -6,7 +6,7 @@
 /*   By: pgernez <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/10 20:53:54 by pgernez           #+#    #+#             */
-/*   Updated: 2017/01/29 23:29:21 by pgernez          ###   ########.fr       */
+/*   Updated: 2017/02/04 23:22:46 by pgernez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -162,7 +162,7 @@ int	main(int ac, char **av)
 	return (0);
 }*/
 
-int	main(int ac, char **av)
+/*int	main(int ac, char **av)
 {
 	char	*str;
 
@@ -173,5 +173,23 @@ int	main(int ac, char **av)
 		printf("la chaine de caracteres donne : %s\n", str);
 	}
 	return (0);
-}
+}*/
 
+int	main(int ac, char **av)
+{
+	char	**tab;
+	size_t	w;
+
+	w = 0;
+	if (ac)
+		;
+	{
+		tab = ft_strsplit(av[1], 'i');
+		while (tab[w] != NULL)
+		{
+			printf("Resultat : |%s|\n", tab[w]);
+			w++;
+		}
+	}
+	return (0);
+}
