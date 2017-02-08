@@ -6,7 +6,7 @@
 /*   By: pgernez <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/21 23:04:29 by pgernez           #+#    #+#             */
-/*   Updated: 2017/01/10 21:16:55 by pgernez          ###   ########.fr       */
+/*   Updated: 2017/02/06 23:33:05 by pgernez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,11 +75,19 @@ void	ft_putendl_fd(char const *s, int fd);
 void	ft_putnbr_fd(int n, int fd);
 
 //3e partie
-//t_list	*ft_lstnew(void const *content, size_t content_size);
-//void	ft_lstdelone(t_list **alst, void (*del)(void *, size_t));
-//void	ft_lstdel(t_list **alst, void (*del)(void *, size_t));
-//void	ft_lstadd(t_list **alst, t_list *new);
-//void	ft_lstiter(t_list *lst, void (*f)(t_list *elem));
-//t_list	*ft_lstmap(t_list *lst, t_list * (*f)(t_list *elem));
+
+typedef struct		s_list
+{
+	void			*content;
+	size_t			content_size;
+	struct s_list	*next;
+}					t_list;
+
+t_list	*ft_lstnew(void const *content, size_t content_size);
+void	ft_lstdelone(t_list **alst, void (*del)(void *, size_t));
+void	ft_lstdel(t_list **alst, void (*del)(void *, size_t));
+void	ft_lstadd(t_list **alst, t_list *new);
+void	ft_lstiter(t_list *lst, void (*f)(t_list *elem));
+t_list	*ft_lstmap(t_list *lst, t_list * (*f)(t_list *elem));
 
 #endif
