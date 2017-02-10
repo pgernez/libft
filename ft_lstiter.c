@@ -6,7 +6,7 @@
 /*   By: pgernez <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/08 20:50:39 by pgernez           #+#    #+#             */
-/*   Updated: 2017/02/08 21:38:17 by pgernez          ###   ########.fr       */
+/*   Updated: 2017/02/10 22:33:59 by pgernez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,8 @@ void	ft_lstiter(t_list *lst, void (*f)(t_list *elem))
 		while (lst != NULL)
 		{
 			tmp = lst->next;
-
+			(*f)(lst);
+			lst = tmp;
 		}
 	}
 }
