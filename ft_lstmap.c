@@ -6,7 +6,7 @@
 /*   By: pgernez <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/10 22:45:57 by pgernez           #+#    #+#             */
-/*   Updated: 2017/02/10 23:07:24 by pgernez          ###   ########.fr       */
+/*   Updated: 2017/02/13 22:55:47 by pgernez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,12 +15,23 @@
 t_list	*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem))
 {
 	t_list	*new;
+	t_list	*head;
 
-	new = NULL;
+	head = NULL;
 	if (lst != NULL)
 	{
-		while (lst != NULL)
-			ft_lstiter(lst, *(*f));
+		new = (*f)(lst);
+		head = new;
+		if (head == NULL)
+			return (NULL);
+		while (lst->next != NULL)
+		{
+			new->next = (*f)(lst->next);
+			if (new->next == NULL)
+				return (NULL);
+			new = new->next;
+			lst = lst->next;
+		}
 	}
-	return (new);
+	return (head);
 }
