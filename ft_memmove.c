@@ -6,7 +6,7 @@
 /*   By: pgernez <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/07 19:00:51 by pgernez           #+#    #+#             */
-/*   Updated: 2017/01/07 23:04:32 by pgernez          ###   ########.fr       */
+/*   Updated: 2017/02/13 23:31:21 by pgernez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 	char	*tmp;
 
 	i = 0;
+	tmp = NULL;
 	while (i <= (len - 1))
 	{
 		tmp[i] = ((char*)src)[i];
