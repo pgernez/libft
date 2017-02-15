@@ -6,7 +6,7 @@
 /*   By: pgernez <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/06 22:35:31 by pgernez           #+#    #+#             */
-/*   Updated: 2017/02/15 21:07:09 by pgernez          ###   ########.fr       */
+/*   Updated: 2017/02/15 21:09:19 by pgernez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,4 +22,6 @@ void	*ft_memcpy(void *dst, const void *src, size_t n)
 		((char*)dst)[i] = ((char*)src)[i];
 		i++;
 	}
+	i = 0;
+	return (dst);
 }
