@@ -6,7 +6,7 @@
 #    By: pgernez <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/02/13 22:52:51 by pgernez           #+#    #+#              #
-#    Updated: 2017/02/13 23:32:36 by pgernez          ###   ########.fr        #
+#    Updated: 2017/02/15 19:11:23 by pgernez          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,7 @@ SOURCE_O = $(SOURCE:.c=.o)
 all: $(NAME)
 
 $(NAME):
-	gcc -c -Wall -Wextra -Werror $(SOURCE) main.c
+	gcc -c -Wall -Wextra -Werror $(SOURCE)
 	ar rc $(NAME) $(SOURCE_O)
 
 clean:
