@@ -6,7 +6,7 @@
 /*   By: pgernez <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/21 23:04:29 by pgernez           #+#    #+#             */
-/*   Updated: 2017/02/10 22:48:20 by pgernez          ###   ########.fr       */
+/*   Updated: 2017/02/15 19:04:54 by pgernez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@
 # include <stdlib.h>
 # include <stdio.h>
 
-//1ere partie
 void	*ft_memset(void *b, int c, size_t len);
 void	ft_bzero(void *s, size_t n);
 void	*ft_memcpy(void *dst, const void *src, size_t n);
@@ -48,7 +47,6 @@ int		ft_isprint(int c);
 int		ft_toupper(int c);
 int		ft_tolower(int c);
 
-//2e partie
 void	*ft_memalloc(size_t size);
 void	ft_memdel(void **ap);
 char	*ft_strnew(size_t size);
@@ -73,8 +71,6 @@ void	ft_putchar_fd(char c, int fd);
 void	ft_putstr_fd(char const *s, int fd);
 void	ft_putendl_fd(char const *s, int fd);
 void	ft_putnbr_fd(int n, int fd);
-
-//3e partie
 
 typedef struct		s_list
 {
