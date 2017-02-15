@@ -6,13 +6,13 @@
 /*   By: pgernez <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/12 19:10:03 by pgernez           #+#    #+#             */
-/*   Updated: 2017/02/15 19:21:25 by pgernez          ###   ########.fr       */
+/*   Updated: 2017/02/15 19:47:19 by pgernez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static size_t	ft_strlen(const char *s)
+static size_t	ft_slen(const char *s)
 {
 	size_t	len;
 
@@ -31,7 +31,7 @@ char			*ft_strrchr(const char *s, int c)
 
 	c_tmp = (char)c;
 	s_tmp = (char*)s;
-	len = ft_strlen(s);
+	len = ft_slen(s);
 	i = len - 1;
 	while (s[i])
 	{
