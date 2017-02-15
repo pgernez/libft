@@ -6,13 +6,13 @@
 /*   By: pgernez <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/15 21:59:00 by pgernez           #+#    #+#             */
-/*   Updated: 2017/01/15 23:41:35 by pgernez          ###   ########.fr       */
+/*   Updated: 2017/02/15 19:18:03 by pgernez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_len(const char *s)
+static size_t	ft_len(const char *s)
 {
 	size_t	len;
 
@@ -22,7 +22,7 @@ size_t	ft_len(const char *s)
 	return (len);
 }
 
-char	*ft_strjoin(char const *s1, char const *s2)
+char			*ft_strjoin(char const *s1, char const *s2)
 {
 	char	*fresh;
 	size_t	i;
