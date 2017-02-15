@@ -6,7 +6,7 @@
 /*   By: pgernez <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/21 17:05:57 by pgernez           #+#    #+#             */
-/*   Updated: 2017/01/30 00:03:41 by pgernez          ###   ########.fr       */
+/*   Updated: 2017/02/15 19:14:39 by pgernez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,6 @@ char	*ft_itoa(int n)
 	int				c;
 	int				neg;
 	size_t			d;
-	//coucou
 
 	neg = 0;
 	d = 1;
@@ -27,7 +26,7 @@ char	*ft_itoa(int n)
 		neg = -1;
 	if (neg == -1)
 		d = 2;
-	n_copy = (neg == -1) ? -(n / 10) : n / 10; // je regarde que les chiffres avant le chiffre des unites (qui existe tout le temps)
+	n_copy = (neg == -1) ? -(n / 10) : n / 10;
 	while (n_copy != 0)
 	{
 		n_copy = n_copy / 10;
