@@ -6,7 +6,7 @@
 /*   By: pgernez <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/14 21:15:49 by pgernez           #+#    #+#             */
-/*   Updated: 2017/01/14 21:15:51 by pgernez          ###   ########.fr       */
+/*   Updated: 2017/02/15 19:01:33 by pgernez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,29 +14,29 @@
 
 char  *ft_strnstr(const char *big, const char *little, size_t len)
 {
-  size_t  i;
-  size_t  j;
-  char  *big_str;
-  char  *little_str;
+	size_t	i;
+	size_t	j;
+	char	*big_str;
+	char	*little_str;
 
-  i = 0;
-  j = 0;
-  big_str = (char*)big;
-  little_str = (char*)little;
-  if (little_str[i] == 0)
-    return ((char*)big);
-  while (big_str[j] && j < len)
-  {
-    while (little_str[i] && big_str[j + i] && (j + i) < len)
-    {
-      if (little_str[i] == big_str[j + i])
-        i++;
-      else
-        break ;
-    }
-    if (!little_str[i])
-      return ((char*)big + j);
-    j++;
-  }
-  return (0);
+	i = 0;
+	j = 0;
+	big_str = (char*)big;
+	little_str = (char*)little;
+	if (little_str[i] == 0)
+		return ((char*)big);
+	while (big_str[j] && j < len)
+	{
+		while (little_str[i] && big_str[j + i] && (j + i) < len)
+		{
+			if (little_str[i] == big_str[j + i])
+				i++;
+			else
+				break ;
+		}
+		if (!little_str[i])
+			return ((char*)big + j);
+		j++;
+	}
+	return (0);
 }
