@@ -6,7 +6,7 @@
 /*   By: pgernez <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/08 18:16:50 by pgernez           #+#    #+#             */
-/*   Updated: 2017/01/14 16:15:28 by pgernez          ###   ########.fr       */
+/*   Updated: 2017/02/15 18:59:00 by pgernez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 char	*ft_strchr(const char *s, int c)
 {
-	size_t i;
+	size_t	i;
 	char	c_tmp;
 	char	*s_tmp;
 
