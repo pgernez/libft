@@ -6,7 +6,7 @@
 /*   By: pgernez <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/21 17:05:57 by pgernez           #+#    #+#             */
-/*   Updated: 2017/02/15 19:14:39 by pgernez          ###   ########.fr       */
+/*   Updated: 2017/02/19 19:52:31 by pgernez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,35 +15,27 @@
 char	*ft_itoa(int n)
 {
 	char			*fresh;
-	unsigned int	n_copy;
-	int				c;
-	int				neg;
-	size_t			d;
+	size_t			len;
+	size_t			sign;
+	unsigned int	cpy;
 
-	neg = 0;
-	d = 1;
-	if (n < 0)
-		neg = -1;
-	if (neg == -1)
-		d = 2;
-	n_copy = (neg == -1) ? -(n / 10) : n / 10;
-	while (n_copy != 0)
+	len = 2;
+	sign = (n < 0) ? 1 : 0;
+	cpy = (sign == 1) ? -n : n;
+	while ((cpy = cpy / 10) > 0)
+		len++;
+	if (!(fresh = (char *)malloc(sizeof(char) * (len + sign))))
+		return (NULL);
+	fresh[len + sign - 1] = '\0';
+	len--;
+	cpy = (sign == 1) ? -n : n;
+	while (cpy >= 9)
 	{
-		n_copy = n_copy / 10;
-		d++;
+		fresh[len + sign - 1] = cpy % 10 + '0';
+		cpy = cpy / 10;
+		len--;
 	}
-	if (!(fresh = (char*)malloc(sizeof(char) * (d + 1))))
-		return (0);
-	n_copy = (neg == -1) ? -n : n;
-	fresh[d] = 0;
-	while (d + neg != 0)
-	{
-		d = d - 1;
-		c = n_copy % 10;
-		n_copy = n_copy / 10;
-		fresh[d] = c + 48;
-	}
-	if (neg == -1)
-		fresh[0] = '-';
+	fresh[len + sign - 1] = cpy + '0';
+	fresh[0] = (sign == 1) ? '-' : fresh[0];
 	return (fresh);
 }

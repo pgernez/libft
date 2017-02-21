@@ -6,7 +6,7 @@
 /*   By: pgernez <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/08 14:17:33 by pgernez           #+#    #+#             */
-/*   Updated: 2017/01/08 14:36:58 by pgernez          ###   ########.fr       */
+/*   Updated: 2017/02/19 20:47:55 by pgernez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,8 @@
 
 int	ft_toupper(int c)
 {
-	unsigned char	a;
-
-	a = (unsigned char)c;
-	if (a >= 'a' && a <= 'z')
-		return (a + ('A' - 'a'));
+	if (c >= 'a' && c <= 'z')
+		return (c + ('A' - 'a'));
 	else
 		return (c);
 }

@@ -6,7 +6,7 @@
 /*   By: pgernez <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/24 11:12:17 by pgernez           #+#    #+#             */
-/*   Updated: 2017/01/06 22:58:43 by pgernez          ###   ########.fr       */
+/*   Updated: 2017/02/19 20:11:06 by pgernez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 size_t	ft_strlen(const char *s)
 {
-	size_t		len;
+	size_t	len;
 
 	len = 0;
 	while (s[len] != 0)

@@ -6,7 +6,7 @@
 /*   By: pgernez <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/15 20:02:35 by pgernez           #+#    #+#             */
-/*   Updated: 2017/02/15 19:19:51 by pgernez          ###   ########.fr       */
+/*   Updated: 2017/02/19 19:21:07 by pgernez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,5 +24,9 @@ int	ft_strnequ(char const *s1, char const *s2, size_t n)
 		else
 			return (0);
 	}
-	return (1);
+	if (i == n)
+		return (1);
+	if (s1[i] == 0 && s2[i] == 0)
+		return (1);
+	return (0);
 }

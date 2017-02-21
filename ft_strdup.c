@@ -6,7 +6,7 @@
 /*   By: pgernez <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/24 11:56:55 by pgernez           #+#    #+#             */
-/*   Updated: 2017/01/06 21:39:42 by pgernez          ###   ########.fr       */
+/*   Updated: 2017/02/19 20:34:42 by pgernez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,8 @@ char	*ft_strdup(const char *s1)
 	j = 0;
 	while (s1[j] != 0)
 		j++;
-	dup = (char*)malloc(sizeof(char) * (j + 1));
+	if (!(dup = (char*)malloc(sizeof(char) * (j + 1))))
+		return (NULL);
 	while (s1[i])
 	{
 		dup[i] = s1[i];

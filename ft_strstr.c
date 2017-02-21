@@ -6,7 +6,7 @@
 /*   By: pgernez <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/02 22:02:48 by pgernez           #+#    #+#             */
-/*   Updated: 2017/01/13 18:44:18 by pgernez          ###   ########.fr       */
+/*   Updated: 2017/02/19 18:23:24 by pgernez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,12 +27,12 @@ char	*ft_strstr(const char *big, const char *little)
 		return ((char*)big);
 	while (big_str[j])
 	{
+		i = 0;
 		while (little_str[i] && big_str[j + i])
 		{
-			if (little_str[i] == big_str[j + i])
-				i++;
-			else
+			if (little_str[i] != big_str[j + i])
 				break ;
+			i++;
 		}
 		if (!little_str[i])
 			return ((char*)big + j);

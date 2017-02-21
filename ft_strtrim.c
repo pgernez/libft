@@ -6,7 +6,7 @@
 /*   By: pgernez <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/15 23:02:20 by pgernez           #+#    #+#             */
-/*   Updated: 2017/01/18 23:19:19 by pgernez          ###   ########.fr       */
+/*   Updated: 2017/02/19 21:30:56 by pgernez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,25 +15,24 @@
 char	*ft_strtrim(char const *s)
 {
 	size_t	i;
-	size_t	j;
-	size_t	k;
+	size_t	start;
+	size_t	end;
 	char	*trim;
-	char	start;
 
 	i = 0;
-	j = 0;
-	k = (ft_strlen(s) - 1);
-	if (s[j] == 0)
-		return ((char*)s);
-	if (!(trim = (char*)malloc(sizeof(char) * ft_strlen(s))))
+	start = 0;
+	end = ft_strlen(s);
+	while (s[start] == ' ' || s[start] == '\n' || s[start] == '\t')
+		start++;
+	while (end != 0 && (s[end - 1] == ' ' || s[end - 1] == '\n'
+				|| s[end - 1] == '\t'))
+		end--;
+	if (end == 0)
+		return ("");
+	if (!(trim = (char*)malloc(sizeof(char) * (end - start + 1))))
 		return (NULL);
-	while (s[j] == ' ' || s[j] == '\n' || s[j] == '\t')
-		j++;
-	start = j;
-	while (s[k] == ' ' || s[k] == '\n' || s[k] == '\t')
-		k--;
-	while (i <= (k - start))
-		trim[i++] = s[j++];
+	while (start < end)
+		trim[i++] = s[start++];
 	trim[i] = 0;
 	return (trim);
 }

@@ -6,7 +6,7 @@
 /*   By: pgernez <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/23 18:01:56 by pgernez           #+#    #+#             */
-/*   Updated: 2016/12/30 19:42:57 by pgernez          ###   ########.fr       */
+/*   Updated: 2017/02/19 21:30:58 by pgernez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ char	*ft_strnew(size_t size)
 	}
 	while (newstr[i])
 	{
-		i = 0;
+		newstr[i] = 0;
 		i++;
 	}
 	return (newstr);

@@ -6,7 +6,7 @@
 /*   By: pgernez <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/08 14:08:43 by pgernez           #+#    #+#             */
-/*   Updated: 2017/01/08 14:17:07 by pgernez          ###   ########.fr       */
+/*   Updated: 2017/02/19 20:46:23 by pgernez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,7 @@
 
 int	ft_isprint(int c)
 {
-	unsigned char	a;
-
-	a = (unsigned char)c;
-	if (a >= ' ' && a <= '~')
+	if (c >= ' ' && c <= '~')
 		return (1);
 	else
 		return (0);
