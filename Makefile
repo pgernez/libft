@@ -3,16 +3,22 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: pgernez <marvin@42.fr>                     +#+  +:+       +#+         #
+#    By: pgernez <pgernez@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/02/13 22:52:51 by pgernez           #+#    #+#              #
-#    Updated: 2017/02/20 22:40:22 by pgernez          ###   ########.fr        #
+#    Updated: 2017/08/09 14:41:45 by pgernez          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
+.PHONY: clean fclean all re
+
 NAME = libft.a
 
-SOURCE = ft_memset.c\
+RELATIVE = .
+OBJ_PATH = obj
+SRC_PATH = .
+
+SRC_NAME = ft_memset.c\
 		ft_bzero.c\
 		ft_memcpy.c\
 		ft_memccpy.c\
@@ -71,18 +77,31 @@ SOURCE = ft_memset.c\
 		ft_lstiter.c\
 		ft_lstmap.c
 
-SOURCE_O = $(SOURCE:.c=.o)
+OBJ_NAME = $(SRC_NAME:.c=.o)
+SRC = $(SRC_NAME)
+OBJ = $(addprefix $(OBJ_PATH)/,$(OBJ_NAME))
+CC = gcc
+CFLAGS = -Wall -Wextra -Werror
+INC = includes/
+LIBFT_PATH = .
+CPPFLAGS = -I$(INC)
+DIR = $(OBJ_PATH)
 
 all: $(NAME)
 
-$(NAME): $(SOURCE_O)
-	ar rc $(NAME) $(SOURCE_O)
+$(DIR):
+	mkdir -p $@
 
-%.o: %.c
-	gcc -c -Wall -Wextra -Werror $<
+$(NAME): $(DIR) $(OBJ)
+	ar rc $(NAME) $(OBJ)
+	ranlib $(NAME)
+
+$(OBJ_PATH)/%.o: $(SRC_PATH)/%.c $(INC)
+	$(CC) $(CFLAGS) $(CPPFLAGS) -o $@ -c $<
 
 clean:
-	/bin/rm -f $(SOURCE_O)
+	/bin/rm -f $(OBJ)
+	@rmdir $(DIR) 2> /dev/null || true
 
 fclean: clean
 	/bin/rm -f $(NAME)
